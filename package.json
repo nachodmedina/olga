@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "@mui/material": "^5.11.4",
+    "@mui/styled-engine-sc": "^5.11.0",
     "next": "^13.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "dev": "next dev",
