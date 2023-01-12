@@ -1,5 +1,14 @@
+import { Box, Container } from "@mui/material";
+import Header from "../src/components/Header";
 function HomePage() {
-  return <div>Welcome to Next.js!</div>;
+
+  return (
+    <Container maxWidth='xl'>
+      <Header />
+    </Container>
+  );
+      
+    
 }
 
 export default HomePage;
