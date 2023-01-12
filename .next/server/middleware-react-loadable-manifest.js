@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={}
+self.__REACT_LOADABLE_MANIFEST={"index.js -> ../src/components/Header":{"id":"index.js -> ../src/components/Header","files":["static/chunks/src_components_Header_js.js"]}}

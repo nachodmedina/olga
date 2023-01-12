@@ -1,14 +1,20 @@
 import { Box, Container } from "@mui/material";
-import Header from "../src/components/Header";
-function HomePage() {
+import styledComponents from "styled-components";
+import dynamic from "next/dynamic";
 
+function HomePage() {
+  const Body = styledComponents.body`
+    margin: 0px;
+    `;
+
+    const Header = dynamic(() => import("../src/components/Header"), {
+      ssr: false,
+    });
   return (
-    <Container maxWidth='xl'>
-      <Header />
-    </Container>
+    <Body>
+        <Header />
+    </Body>
   );
-      
-    
 }
 
 export default HomePage;
