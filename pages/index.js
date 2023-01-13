@@ -1,20 +1,28 @@
 import { Box, Container } from "@mui/material";
 import styledComponents from "styled-components";
-import dynamic from "next/dynamic";
+import { createGlobalStyle } from "styled-components";
+import Header from "../src/components/Header";
 
 function HomePage() {
-  const Body = styledComponents.body`
-    margin: 0px;
+
+    const Body = styledComponents.div`
+        margin: 0px;
     `;
 
-    const Header = dynamic(() => import("../src/components/Header"), {
-      ssr: false,
-    });
-  return (
-    <Body>
-        <Header />
-    </Body>
-  );
+    const GlobalStyle = createGlobalStyle`
+        body {
+            margin: 0px;
+        }
+    `;
+
+    return (
+        <>
+            <GlobalStyle />
+            <Body>
+                <Header />
+            </Body>
+        </>
+    );
 }
 
 export default HomePage;
