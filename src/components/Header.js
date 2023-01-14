@@ -2,10 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import PersistentDrawerLeft from "./Appbar";
 
-function Header() {
+function Header({pageName}) {
   return (
     <Box>
-      <PersistentDrawerLeft />
+      <PersistentDrawerLeft pageName={pageName}/>
     </Box>
   );
 }
