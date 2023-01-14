@@ -23,7 +23,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import SellIcon from '@mui/icons-material/Sell';
 import InventoryIcon from '@mui/icons-material/Inventory';
-import { Link } from '@mui/material';
+import Link from 'next/link';
+// import { Link } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -175,8 +176,7 @@ export default function PersistentDrawerLeft({ pageName }) {
             const { text, icon, link } = item;
             return (
               <Link
-                color="#000"
-                underline="none"
+                style={{ textDecoration: 'none', color: '#000'}}
                 href={link}
                 onClick={handleDrawerClose}
               >
