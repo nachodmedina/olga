@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -58,6 +59,27 @@ export default function PersistentDrawerLeft({ pageName }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Escape') {
+      handleDrawerClose();
+    }
+  };
+
+  const handleClickOutside = (event) => {
+    if (event.target.closest('.drawer') === null) {
+      handleDrawerClose();
+    }
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
