@@ -20,27 +20,17 @@ const LoginPage = () => {
     return (
       <Box
         sx={{
-          backgroundColor: "black",
-          width: 'auto',
           display: "flex",
-          height: 'auto',
-          display: "flex",
-          justifyContent: "center",   
+          justifyContent: "center",
           alignItems: "center",
+          width: '100vw',
+          height: '100vh',
         }}
       >
-        <Paper sx={{ display: "flex" }}>
+        <Paper sx={{ display: "flex", justifyContent:"center", alignItems: "center", }} elevation={12} >
           <Box
-            sx={{
-              width: "90%",
-              maxWidth: 500,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              margin: 0,
-            }}
-          >
-            <form style={{ marginTop: 3 }} onSubmit={handleSubmit}>
+            sx={{ maxWidth: '90%' }}>
+            <form style={{ marginTop: 3  }} onSubmit={handleSubmit}>
               <TextField
                 label="Username"
                 value={username}
@@ -61,10 +51,11 @@ const LoginPage = () => {
               />
               <Box display="flex" justifyContent="center" alignItems="center">
                 <Button
-                  sx={{ marginTop: 3, padding: spacing(2) }}
+                  sx={{ marginTop: 3, padding: spacing(2), marginBottom: 3 }}
                   variant="contained"
                   color="secondary"
                   type="submit"
+                  size="large"
                 >
                   Log In
                 </Button>
