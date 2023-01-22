@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Paper from "@mui/material/Paper";
 import styled from "styled-components";
 import { spacing } from "@mui/system";
+ import { Formik } from "formik";
 
 const LoginPage = () => {
     const router = useRouter();
@@ -23,17 +24,23 @@ const LoginPage = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: '100vw',
-          height: '100vh',
+          width: "100vw",
+          height: "100vh",
         }}
       >
-        <Paper sx={{ display: "flex", justifyContent:"center", alignItems: "center", }} elevation={12} >
-          <Box
-            sx={{ maxWidth: '90%' }}>
-            <form style={{ marginTop: 3  }} onSubmit={handleSubmit}>
+        <Paper
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          elevation={12}
+        >
+          <Box sx={{ maxWidth: "90%" }}>
+            <form style={{ marginTop: 3 }} onSubmit={handleSubmit}>
               <TextField
                 label="Username"
-                value={username}
+                defaultValue={username}
                 onChange={(e) => setUsername(e.target.value)}
                 fullWidth
                 margin="normal"
@@ -43,7 +50,7 @@ const LoginPage = () => {
                 sx={{ marginTop: 3 }}
                 label="Password"
                 type="password"
-                value={password}
+                defaultValue={password}
                 onChange={(e) => setPassword(e.target.value)}
                 fullWidth
                 margin="normal"
