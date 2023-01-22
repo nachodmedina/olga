@@ -12,6 +12,11 @@ export const UsersService = {
     getById: (id) =>
         apiClient
             .get(`${URL}/${id}`)
+            .then(response => response.data),
+    
+    getByUsername: (username) =>
+        apiClient
+            .get(`${URL}/${username}`)
             .then(response => response.data)
 
 }
