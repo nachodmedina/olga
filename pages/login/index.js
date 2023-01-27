@@ -7,6 +7,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import LoginForm from "../../src/components/Form";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -51,7 +52,8 @@ const LoginPage = () => {
           <Paper sx={{ display: "flex", justifyContent:"center", alignItems: "center", }} elevation={12} >
             <Box
               sx={{ maxWidth: '90%' }}>
-              <form style={{ marginTop: 3  }} onSubmit={handleSubmit}>
+                <LoginForm />
+              {/* <form style={{ marginTop: 3  }} onSubmit={handleSubmit}>
                 <TextField
                   label="Username"
                   value={username}
@@ -81,7 +83,7 @@ const LoginPage = () => {
                     Log In
                   </Button>
                 </Box>
-              </form>
+              </form> */}
             </Box>
           </Paper>
         </Box>

@@ -10,12 +10,12 @@ const apiClient = Axios.create({
     baseURL: publicRuntimeConfig.API_BASE_URL,
     maxContentLength: Infinity,
     maxBodyLength: Infinity,
-    paramsSerializer: params =>
-        qs.stringify(params, {
-            arrayFormat: 'indices',
-            filter: (prefix, value) =>
-                value !== undefined ? value : undefined,
-        }),
+    // paramsSerializer: params =>
+    //     qs.stringify(params, {
+    //         arrayFormat: 'indices',
+    //         filter: (prefix, value) =>
+    //             value !== undefined ? value : undefined,
+    //     }),
     headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',

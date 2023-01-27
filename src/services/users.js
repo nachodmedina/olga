@@ -1,12 +1,12 @@
 import { AxiosResponse } from "axios";
 import apiClient from "./apiClient";
 
-const URL = "/users";
+const URL = `${process.env.API_BASE_URL}`;
 
 export const UsersService = {
     findAll: () => 
         apiClient
-            .get(URL)
+            .get(API_BASE_URL)
             .then(response => response.data),
     
     getById: (id) =>
